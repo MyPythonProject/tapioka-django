@@ -1,0 +1,47 @@
+{% extends "photos/base.html" %}
+
+{% block title %}相册列表{% endblock %}
+
+{% block content %}
+<style>
+    header{background: #FFFFFF;}
+   .card-body .photo-url{
+       font-family: var(--Noto-Sans);
+       color: dimgrey;
+   }
+   .album{
+       width: 100%;
+       height: calc(100vh - 130px);
+       background: #F4F4F4;
+   }
+</style>
+<div class="album py-5 bg-light">
+    <div class="container text-center">
+            <h1 class="text-dark" id="Album">Memoirs Album List</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for item in object_list %}
+                {% if item.photo_set.count %}
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="100%" focusable="false" role="img"
+                            aria-label="Placeholder: Thumbnail" src="{{ item.photo_set.all.0.image.url }}">
+                            </img>
+                            <div class="card-body">
+                                <a class="photo-url" href="{{ item.get_absolute_url }}"><span>{{ item.name }}</span></a>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                (No photos currently uploaded)
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn btn-light px-5 py-2 primary-btn" onclick="window.location.href = '{% url 'index' %}'" style="background: #ffffff; font-family: var(--Noto-Sans)">返回首页</button>
+    </div>
+</div>
+
+{% endblock %}

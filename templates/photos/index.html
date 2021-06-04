@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tapioka</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "/photos/css/all.css" %}">
+    <link rel="stylesheet" href="{% static "/photos/css/main.css"%}">
+    <link rel="stylesheet" href="{% static "/photos/css/mobile-main.css"%}">
+    <style>
+        header{ width: 100%; height: calc(100vh - 50px);}
+    </style>
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+    <!-- 导航栏部分 -->
+        <div class="container-fluid p-0" id="Home">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <i class="fab fa-gitkraken fa-2x mx-3" aria-hidden="true"></i>タピオカ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <i class="fas fa-align-right text-light"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="mr-auto"></div>
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/"></a>
+                <a class="nav-item nav-link" href="{% url 'item_list' %}">Album</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="container">
+            <div class="row" style="margin-top: 100px; margin-bottom: 100px;">
+                <div class="col-md-6 col-sm-12 text-white left text-center">
+                    <h6 class="text">来自ハイカラ的乌贼和章鱼Team</h6>
+                    <h1 class="text">IKa Milk Tea</h1>
+                    <p class="text">イカ、よろしく---！</p>
+                    <button class="btn btn-light px-5 py-2 primary-btn" onclick="window.location.href = '/list/'">Memoirs</button>
+                </div>
+                <div class="col-md-6 col-sm-12 right">
+                    <img src="{% static "/photos/images/tapioka_banner.png"%}" alt="ika" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <footer>
+    <div class="container-fluid p-0">
+      <div class="row text-left">
+        <div class="col-md-6 col-sm-6">
+          <h4 class="text-light">About This Page</h4>
+          <p class="text-muted">使用Bootstrap + Django做的奶茶相册站点，后期还会增加评论、Blog等功能。</p>
+          <p class="pt-4 text-muted">Copyright ©2021 All rights reserved | This Web is made with by
+            <span> Kame</span>
+          </p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h4 class="text-light">Follow Me</h4>
+          <div class="column text-light">
+            <a href="https://weibo.com/3323858292/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1">
+              <i class="fab fa-weibo"></i>
+              <span class="text-muted">@Kameee</span>
+            </a>
+            <p>
+              <a href="https://github.com/Kameees">
+                <i class="fab fa-github"></i>
+                <span class="text-muted">Github Project</span>
+              </a>
+            </p>
+            <p>
+                  <a href="https://kameee.top">
+                      <span class="text-muted">My Blog Site:</span>
+                      <a href="https://www.kameee.top/" style="color: #46acf0"><span>kameee.top</span></a>
+                  </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
