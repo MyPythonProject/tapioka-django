@@ -8,3 +8,5 @@
 - Django:3.2.4
 - SimpleUI:2021.6.2
 - Pillow:8.2.0
+
+demo: http://tapioka.kameee.top/
